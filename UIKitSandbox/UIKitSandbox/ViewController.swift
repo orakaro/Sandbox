@@ -11,9 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadScreens()
     }
 
-
+    func loadScreens() {
+        let vc = ComponentDemoViewController.make()
+        embed(vc, to: view)
+    }
 }
 

@@ -11,7 +11,15 @@ import UIKit
 
 // CollectionView can have many different Cell types. Each can have different Input type.
 // If T of DataSource can convert to each of those Input type then we allow to dequeReusable
-public final class CollectionDataSource<T: Convertible, Cell: UIViewController & CellType & EventEmittable, Parent: UIViewController & EventAcceptable>: NSObject, RxCollectionViewDataSourceType, UICollectionViewDataSource where T.Target == Cell.Input, Cell.Event == Parent.Event {
+public final class CollectionDataSource<
+    T: Convertible,
+    Cell: UIViewController & CellType & EventEmittable,
+    Parent: UIViewController & EventAcceptable
+>: NSObject, RxCollectionViewDataSourceType, UICollectionViewDataSource
+where
+    T.Target == Cell.Input,
+    Cell.Event == Parent.Event
+{
     public typealias Element = [T]
 
     public private(set) var element: Element = []
@@ -47,7 +55,15 @@ public final class CollectionDataSource<T: Convertible, Cell: UIViewController &
 
 // TableView can have many different Cell types. Each can have different Input type.
 // If T of DataSource can convert to each of those Input type then we allow to dequeReusable
-public final class TableDataSource<T: Convertible, Cell: UIViewController & CellType & EventEmittable, Parent: UIViewController & EventAcceptable>: NSObject, RxTableViewDataSourceType, UITableViewDataSource where T.Target == Cell.Input, Cell.Event == Parent.Event {
+public final class TableDataSource<
+    T: Convertible,
+    Cell: UIViewController & CellType & EventEmittable,
+    Parent: UIViewController & EventAcceptable
+>: NSObject, RxTableViewDataSourceType, UITableViewDataSource
+where
+    T.Target == Cell.Input,
+    Cell.Event == Parent.Event
+{
     public typealias Element = [T]
 
     public private(set) var element: Element = []

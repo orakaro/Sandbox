@@ -16,7 +16,19 @@ public protocol SectionModelType {
 }
 
 // A CollectionView DataSource that supports sections
-public final class SectionedCollectionDataSource<SectionModel: SectionModelType, Cell: UIViewController & CellType & EventEmittable, Parent: UIViewController & EventAcceptable>: NSObject, RxCollectionViewDataSourceType, UICollectionViewDataSource where SectionModel.RowType: Convertible, SectionModel.RowType.Target == Cell.Input, Cell.Event == Parent.Event {
+public final class SectionedCollectionDataSource<
+    SectionModel: SectionModelType,
+    Header: UIViewController & CellType & EventEmittable,
+    Cell: UIViewController & CellType & EventEmittable,
+    Parent: UIViewController & EventAcceptable
+>: NSObject, RxCollectionViewDataSourceType, UICollectionViewDataSource
+where
+    Header.Input == String,
+    SectionModel.RowType: Convertible,
+    SectionModel.RowType.Target == Cell.Input,
+    Header.Event == Parent.Event,
+    Cell.Event == Parent.Event
+{
     public typealias Element = [SectionModel]
 
     public private(set) var sections: [SectionModel] = []
@@ -53,10 +65,38 @@ public final class SectionedCollectionDataSource<SectionModel: SectionModelType,
     public func item(at indexPath: IndexPath) -> SectionModel.RowType? {
         sections[safe: indexPath.section]?.rows[safe: indexPath.row]
     }
+
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var caseKind: CollectionViewSupplementaryKind?
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            caseKind = .header
+        } else if (kind == UICollectionView.elementKindSectionFooter) {
+            caseKind = .footer
+        }
+        let headerView = CollectionReusableView<Header, Parent>.dequeue(from: collectionView, of: caseKind!, for: indexPath, parent: parent)
+        if let input = header(at: indexPath) {
+            headerView.content?.apply(input: input)
+        }
+        return headerView
+    }
+
+    public func header(at indexPath: IndexPath) -> String? {
+        sections[safe: indexPath.section]?.header
+    }
+
 }
 
 // A TableView DataSource that supports sections
-public final class SectionedTableDataSource<SectionModel: SectionModelType, Cell: UIViewController & CellType & EventEmittable, Parent: UIViewController & EventAcceptable>: NSObject, RxTableViewDataSourceType, UITableViewDataSource where SectionModel.RowType: Convertible, SectionModel.RowType.Target == Cell.Input, Cell.Event == Parent.Event {
+public final class SectionedTableDataSource<
+    SectionModel: SectionModelType,
+    Cell: UIViewController & CellType & EventEmittable,
+    Parent: UIViewController & EventAcceptable
+>: NSObject, RxTableViewDataSourceType, UITableViewDataSource
+where
+    SectionModel.RowType: Convertible,
+    SectionModel.RowType.Target == Cell.Input,
+    Cell.Event == Parent.Event
+{
     public typealias Element = [SectionModel]
 
     public private(set) var sections: [SectionModel] = []

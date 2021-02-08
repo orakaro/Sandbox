@@ -18,22 +18,13 @@
 		B40CA6BE25D03D99004260C0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40CA6AA25D03BDC004260C0 /* RxRelay.framework */; };
 		B40CA6C025D03D9A004260C0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40CA6AD25D03BDC004260C0 /* RxSwift.framework */; };
 		B40CA71625D04505004260C0 /* ComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40CA71525D04505004260C0 /* ComponentKit.framework */; };
-		B40CA71725D04505004260C0 /* ComponentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B40CA71525D04505004260C0 /* ComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B40CA71B25D0CCAF004260C0 /* ComponentDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA71A25D0CCAF004260C0 /* ComponentDemoViewController.xib */; };
+		B40CA71D25D0CCBB004260C0 /* ComponentDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CA71C25D0CCBB004260C0 /* ComponentDemoViewController.swift */; };
+		B40CA72025D0D23D004260C0 /* ComponentCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CA71F25D0D23D004260C0 /* ComponentCellViewController.swift */; };
+		B40CA72225D0D246004260C0 /* ComponentCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA72125D0D246004260C0 /* ComponentCellViewController.xib */; };
+		B40CA72625D121FE004260C0 /* ComponentHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA72525D121FE004260C0 /* ComponentHeaderViewController.xib */; };
+		B40CA72825D1220E004260C0 /* ComponentHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CA72725D1220E004260C0 /* ComponentHeaderViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B40CA71825D04505004260C0 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B40CA71725D04505004260C0 /* ComponentKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B40CA57825D0323B004260C0 /* UIKitSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +40,12 @@
 		B40CA6AC25D03BDC004260C0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = ../Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		B40CA6AD25D03BDC004260C0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B40CA71525D04505004260C0 /* ComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40CA71A25D0CCAF004260C0 /* ComponentDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentDemoViewController.xib; sourceTree = "<group>"; };
+		B40CA71C25D0CCBB004260C0 /* ComponentDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDemoViewController.swift; sourceTree = "<group>"; };
+		B40CA71F25D0D23D004260C0 /* ComponentCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCellViewController.swift; sourceTree = "<group>"; };
+		B40CA72125D0D246004260C0 /* ComponentCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentCellViewController.xib; sourceTree = "<group>"; };
+		B40CA72525D121FE004260C0 /* ComponentHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentHeaderViewController.xib; sourceTree = "<group>"; };
+		B40CA72725D1220E004260C0 /* ComponentHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentHeaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +84,7 @@
 		B40CA57A25D0323B004260C0 /* UIKitSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				B40CA71925D0CC8E004260C0 /* Screens */,
 				B40CA57B25D0323B004260C0 /* AppDelegate.swift */,
 				B40CA57D25D0323B004260C0 /* SceneDelegate.swift */,
 				B40CA57F25D0323B004260C0 /* ViewController.swift */,
@@ -110,6 +108,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B40CA71925D0CC8E004260C0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B40CA71A25D0CCAF004260C0 /* ComponentDemoViewController.xib */,
+				B40CA71C25D0CCBB004260C0 /* ComponentDemoViewController.swift */,
+				B40CA72125D0D246004260C0 /* ComponentCellViewController.xib */,
+				B40CA71F25D0D23D004260C0 /* ComponentCellViewController.swift */,
+				B40CA72525D121FE004260C0 /* ComponentHeaderViewController.xib */,
+				B40CA72725D1220E004260C0 /* ComponentHeaderViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,7 +131,7 @@
 				B40CA57425D0323B004260C0 /* Sources */,
 				B40CA57525D0323B004260C0 /* Frameworks */,
 				B40CA57625D0323B004260C0 /* Resources */,
-				B40CA71825D04505004260C0 /* Embed Frameworks */,
+				B40CA71E25D0D023004260C0 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -169,19 +180,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40CA58825D0323D004260C0 /* LaunchScreen.storyboard in Resources */,
+				B40CA72625D121FE004260C0 /* ComponentHeaderViewController.xib in Resources */,
 				B40CA58525D0323D004260C0 /* Assets.xcassets in Resources */,
 				B40CA58325D0323B004260C0 /* Main.storyboard in Resources */,
+				B40CA72225D0D246004260C0 /* ComponentCellViewController.xib in Resources */,
+				B40CA71B25D0CCAF004260C0 /* ComponentDemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B40CA71E25D0D023004260C0 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxBlocking.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B40CA57425D0323B004260C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40CA72025D0D23D004260C0 /* ComponentCellViewController.swift in Sources */,
 				B40CA58025D0323B004260C0 /* ViewController.swift in Sources */,
+				B40CA71D25D0CCBB004260C0 /* ComponentDemoViewController.swift in Sources */,
+				B40CA72825D1220E004260C0 /* ComponentHeaderViewController.swift in Sources */,
 				B40CA57C25D0323B004260C0 /* AppDelegate.swift in Sources */,
 				B40CA57E25D0323B004260C0 /* SceneDelegate.swift in Sources */,
 			);

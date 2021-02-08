@@ -27,6 +27,7 @@ extension NSObject: ClassNameProtocol {}
 public protocol BundleLoadable: AnyObject {
     static var bundle: Bundle { get }
     var bundle: Bundle { get }
+    static func make() -> Self
 }
 
 public extension BundleLoadable where Self: UIViewController {
@@ -37,10 +38,13 @@ public extension BundleLoadable where Self: UIViewController {
     var bundle: Bundle {
         return Self.bundle
     }
+
+    static func make() -> Self {
+        return Self.init(nibName: Self.className, bundle: Self.bundle)
+    }
 }
 
 extension UIViewController: BundleLoadable {}
 
-// Create a Xib and a ViewController with same name
-// Inside init()
-// super.init(nibName: UnlockViewController.className, bundle: UnlockViewController.bundle)
+// Create a Xib and a Swift source with same name XXXViewController
+// let vc = XXXViewController.make()
