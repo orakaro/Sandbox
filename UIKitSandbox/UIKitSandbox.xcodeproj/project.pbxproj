@@ -24,6 +24,10 @@
 		B40CA72225D0D246004260C0 /* ComponentCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA72125D0D246004260C0 /* ComponentCellViewController.xib */; };
 		B40CA72625D121FE004260C0 /* ComponentHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA72525D121FE004260C0 /* ComponentHeaderViewController.xib */; };
 		B40CA72825D1220E004260C0 /* ComponentHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CA72725D1220E004260C0 /* ComponentHeaderViewController.swift */; };
+		B40CA7E525DD6680004260C0 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CA7E425DD6680004260C0 /* SimpleCollectionViewController.swift */; };
+		B40CA7E825DD668F004260C0 /* SimpleCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA7E725DD668F004260C0 /* SimpleCollectionViewController.xib */; };
+		B40CA7EE25DD6FE2004260C0 /* SimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40CA7ED25DD6FE2004260C0 /* SimpleCell.xib */; };
+		B40CA7F125DD6FF4004260C0 /* SimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CA7F025DD6FF4004260C0 /* SimpleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		B40CA72125D0D246004260C0 /* ComponentCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentCellViewController.xib; sourceTree = "<group>"; };
 		B40CA72525D121FE004260C0 /* ComponentHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentHeaderViewController.xib; sourceTree = "<group>"; };
 		B40CA72725D1220E004260C0 /* ComponentHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentHeaderViewController.swift; sourceTree = "<group>"; };
+		B40CA7E425DD6680004260C0 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		B40CA7E725DD668F004260C0 /* SimpleCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCollectionViewController.xib; sourceTree = "<group>"; };
+		B40CA7ED25DD6FE2004260C0 /* SimpleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCell.xib; sourceTree = "<group>"; };
+		B40CA7F025DD6FF4004260C0 /* SimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,26 @@
 		B40CA71925D0CC8E004260C0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B40CA7EB25DD6830004260C0 /* Component */,
+				B40CA7EA25DD6813004260C0 /* Simple */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B40CA7EA25DD6813004260C0 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				B40CA7E425DD6680004260C0 /* SimpleCollectionViewController.swift */,
+				B40CA7E725DD668F004260C0 /* SimpleCollectionViewController.xib */,
+				B40CA7ED25DD6FE2004260C0 /* SimpleCell.xib */,
+				B40CA7F025DD6FF4004260C0 /* SimpleCell.swift */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		B40CA7EB25DD6830004260C0 /* Component */ = {
+			isa = PBXGroup;
+			children = (
 				B40CA71A25D0CCAF004260C0 /* ComponentDemoViewController.xib */,
 				B40CA71C25D0CCBB004260C0 /* ComponentDemoViewController.swift */,
 				B40CA72125D0D246004260C0 /* ComponentCellViewController.xib */,
@@ -118,7 +146,7 @@
 				B40CA72525D121FE004260C0 /* ComponentHeaderViewController.xib */,
 				B40CA72725D1220E004260C0 /* ComponentHeaderViewController.swift */,
 			);
-			path = Screens;
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40CA58825D0323D004260C0 /* LaunchScreen.storyboard in Resources */,
+				B40CA7EE25DD6FE2004260C0 /* SimpleCell.xib in Resources */,
 				B40CA72625D121FE004260C0 /* ComponentHeaderViewController.xib in Resources */,
+				B40CA7E825DD668F004260C0 /* SimpleCollectionViewController.xib in Resources */,
 				B40CA58525D0323D004260C0 /* Assets.xcassets in Resources */,
 				B40CA58325D0323B004260C0 /* Main.storyboard in Resources */,
 				B40CA72225D0D246004260C0 /* ComponentCellViewController.xib in Resources */,
@@ -224,6 +254,8 @@
 				B40CA58025D0323B004260C0 /* ViewController.swift in Sources */,
 				B40CA71D25D0CCBB004260C0 /* ComponentDemoViewController.swift in Sources */,
 				B40CA72825D1220E004260C0 /* ComponentHeaderViewController.swift in Sources */,
+				B40CA7E525DD6680004260C0 /* SimpleCollectionViewController.swift in Sources */,
+				B40CA7F125DD6FF4004260C0 /* SimpleCell.swift in Sources */,
 				B40CA57C25D0323B004260C0 /* AppDelegate.swift in Sources */,
 				B40CA57E25D0323B004260C0 /* SceneDelegate.swift in Sources */,
 			);
