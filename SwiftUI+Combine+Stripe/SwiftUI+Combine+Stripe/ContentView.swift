@@ -9,7 +9,7 @@ import SwiftUI
 import Stripe
 
 struct ContentView: View {
-    @ObservedObject var model = SimpleModel()
+    @ObservedObject var model = Model()
 
     var body: some View {
         VStack {
@@ -42,18 +42,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-enum ClientError: Error {
-    case serverResponse
-    case badStatusCode(statusCode: Int)
-}
-
-struct PaymentSheetResponse: Codable {
-    let paymentIntent: String
-    let ephemeralKey: String
-    let customer: String
-}
-
-class SimpleModel: ObservableObject {
+class Model: ObservableObject {
     let backendCheckoutUrl = URL(string: "https://jealous-innovative-ranunculus.glitch.me/payment-sheet")!
     @Published var paymentSheet: PaymentSheet?
     @Published var paymentResult: PaymentResult?

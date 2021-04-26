@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B481FD292637086F00717137 /* FlowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481FD282637086F00717137 /* FlowContentView.swift */; };
+		B481FD2C263708CE00717137 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481FD2B263708CE00717137 /* Response.swift */; };
 		B4AE0EBA263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE0EB9263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift */; };
 		B4AE0EBC263700D500F9EFD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE0EBB263700D500F9EFD2 /* ContentView.swift */; };
 		B4AE0EBE263700D600F9EFD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AE0EBD263700D600F9EFD2 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B481FD282637086F00717137 /* FlowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentView.swift; sourceTree = "<group>"; };
+		B481FD2B263708CE00717137 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		B4AE0EB6263700D500F9EFD2 /* SwiftUI+Combine+Stripe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI+Combine+Stripe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AE0EB9263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Combine_StripeApp.swift; sourceTree = "<group>"; };
 		B4AE0EBB263700D500F9EFD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,9 +60,11 @@
 			children = (
 				B4AE0EB9263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift */,
 				B4AE0EBB263700D500F9EFD2 /* ContentView.swift */,
+				B481FD282637086F00717137 /* FlowContentView.swift */,
 				B4AE0EBD263700D600F9EFD2 /* Assets.xcassets */,
 				B4AE0EC2263700D600F9EFD2 /* Info.plist */,
 				B4AE0EBF263700D600F9EFD2 /* Preview Content */,
+				B481FD2B263708CE00717137 /* Response.swift */,
 			);
 			path = "SwiftUI+Combine+Stripe";
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B481FD2C263708CE00717137 /* Response.swift in Sources */,
+				B481FD292637086F00717137 /* FlowContentView.swift in Sources */,
 				B4AE0EBC263700D500F9EFD2 /* ContentView.swift in Sources */,
 				B4AE0EBA263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift in Sources */,
 			);
