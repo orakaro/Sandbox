@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftUI+Combine+Stripe/SwiftUI+Combine+Stripe.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftUISandbox/SwiftUISandbox.xcodeproj">
    </FileRef>
    <FileRef

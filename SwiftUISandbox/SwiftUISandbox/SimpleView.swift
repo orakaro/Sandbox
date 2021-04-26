@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SimpleView: View {
     var body: some View {
-        Text("hello")
+        Text("Hello")
     }
 }
 
-struct SimpleView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SimpleView()
     }
