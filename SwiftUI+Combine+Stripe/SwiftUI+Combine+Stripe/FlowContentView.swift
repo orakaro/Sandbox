@@ -65,12 +65,12 @@ struct FlowContentView_Previews: PreviewProvider {
 }
 
 class FlowModel: ObservableObject {
-    let backendCheckoutUrl = URL(string: "https://jealous-innovative-ranunculus.glitch.me/payment-sheet")!
+    let backendCheckoutUrl = URL(string: "\(Constants.backendUrl)/checkout")!
     @Published var paymentSheetFlowController: PaymentSheet.FlowController?
     @Published var paymentResult: PaymentResult?
 
     init() {
-        STPAPIClient.shared.publishableKey = "pk_test_51ISGYJDS4a4iRDwPsjPZaXJdtiv5i94XJTQ7gCTu9jVxGCJMnrLlDOeYavr8bbCg5wLsEioCmHNjV45SMrmLQlbR00Idc3A1bB"
+        STPAPIClient.shared.publishableKey = Constants.publishableKey
     }
 
     func preparePaymentSheet() {
