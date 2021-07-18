@@ -18,6 +18,6 @@ struct SwiftUI_Combine_StripeApp: App {
 
 struct Constants {
     // https://glitch.com/edit/#!/remix/stripe-mobile-payment-sheet
-    static let backendUrl = "https://useful-lively-bread.glitch.me/"
+    static let backendUrl = "https://absorbing-abalone-pail.glitch.me/"
     static let publishableKey = "pk_test_51ISGYJDS4a4iRDwPsjPZaXJdtiv5i94XJTQ7gCTu9jVxGCJMnrLlDOeYavr8bbCg5wLsEioCmHNjV45SMrmLQlbR00Idc3A1bB"
 }
