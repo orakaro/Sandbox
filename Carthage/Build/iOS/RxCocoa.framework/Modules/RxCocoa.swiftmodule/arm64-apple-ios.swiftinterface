@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RxCocoa
 import CoreGraphics
 import Dispatch
@@ -162,8 +162,8 @@ open class RxCollectionViewDataSourceProxy : RxCocoa.DelegateProxy<UIKit.UIColle
   @objc public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
   @objc public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
   override open func setForwardToDelegate(_ forwardToDelegate: UIKit.UICollectionViewDataSource?, retainDelegate: Swift.Bool)
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UICollectionView, UIKit.UICollectionViewDataSource>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UICollectionView, UIKit.UICollectionViewDataSource>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UICollectionViewDataSource, Proxy.ParentObject == UIKit.UICollectionView
+  @objc deinit
 }
 public enum SharingScheduler {
   public static var make: () -> RxSwift.SchedulerType {
@@ -181,8 +181,8 @@ open class RxTextStorageDelegateProxy : RxCocoa.DelegateProxy<UIKit.NSTextStorag
   }
   public init(textStorage: UIKit.NSTextStorage)
   public static func registerKnownImplementations()
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.NSTextStorage, UIKit.NSTextStorageDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.NSTextStorage, UIKit.NSTextStorageDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.NSTextStorageDelegate, Proxy.ParentObject == UIKit.NSTextStorage
+  @objc deinit
 }
 public typealias Driver<Element> = RxCocoa.SharedSequence<RxCocoa.DriverSharingStrategy, Element>
 public struct DriverSharingStrategy : RxCocoa.SharingStrategyProtocol {
@@ -199,8 +199,8 @@ open class RxTableViewDelegateProxy : RxCocoa.RxScrollViewDelegateProxy, UIKit.U
     get
   }
   public init(tableView: UIKit.UITableView)
-  @objc deinit
   override public init(scrollView: RxCocoa.RxScrollViewDelegateProxy.ParentObject)
+  @objc deinit
 }
 extension Reactive where Base : UIKit.UIRefreshControl {
   public var isRefreshing: RxSwift.Binder<Swift.Bool> {
@@ -242,8 +242,8 @@ public class RxPickerViewDataSourceProxy : RxCocoa.DelegateProxy<UIKit.UIPickerV
   @objc public func numberOfComponents(in pickerView: UIKit.UIPickerView) -> Swift.Int
   @objc public func pickerView(_ pickerView: UIKit.UIPickerView, numberOfRowsInComponent component: Swift.Int) -> Swift.Int
   override public func setForwardToDelegate(_ forwardToDelegate: UIKit.UIPickerViewDataSource?, retainDelegate: Swift.Bool)
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UIPickerView, UIKit.UIPickerViewDataSource>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UIPickerView, UIKit.UIPickerViewDataSource>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UIPickerViewDataSource, Proxy.ParentObject == UIKit.UIPickerView
+  @objc deinit
 }
 extension Reactive where Base : UIKit.UIControl {
   public func controlEvent(_ controlEvents: UIKit.UIControl.Event) -> RxCocoa.ControlEvent<()>
@@ -363,10 +363,10 @@ public enum RxCocoaInterceptionMechanism {
   case unknown
   case kvo
   public static func == (a: RxCocoa.RxCocoaInterceptionMechanism, b: RxCocoa.RxCocoaInterceptionMechanism) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum RxCocoaObjCRuntimeError : Swift.Error, Swift.CustomDebugStringConvertible {
   case unknown(target: Swift.AnyObject)
@@ -413,16 +413,16 @@ open class RxSearchControllerDelegateProxy : RxCocoa.DelegateProxy<UIKit.UISearc
   }
   public init(searchController: UIKit.UISearchController)
   public static func registerKnownImplementations()
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UISearchController, UIKit.UISearchControllerDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UISearchController, UIKit.UISearchControllerDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UISearchControllerDelegate, Proxy.ParentObject == UIKit.UISearchController
+  @objc deinit
 }
 open class RxCollectionViewDelegateProxy : RxCocoa.RxScrollViewDelegateProxy, UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDelegateFlowLayout {
   weak public var collectionView: UIKit.UICollectionView? {
     get
   }
   public init(collectionView: UIKit.UICollectionView)
-  @objc deinit
   override public init(scrollView: RxCocoa.RxScrollViewDelegateProxy.ParentObject)
+  @objc deinit
 }
 extension UIScrollView : RxCocoa.HasDelegate {
   public typealias Delegate = UIKit.UIScrollViewDelegate
@@ -468,6 +468,7 @@ extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.Dr
   public func drive(_ relays: RxRelay.ReplayRelay<Self.Element?>...) -> RxSwift.Disposable
   public func drive<Result>(_ transformation: (RxSwift.Observable<Self.Element>) -> Result) -> Result
   public func drive<R1, R2>(_ with: (RxSwift.Observable<Self.Element>) -> (R1) -> R2, curriedArgument: R1) -> R2
+  public func drive<Object>(with object: Object, onNext: ((Object, Self.Element) -> Swift.Void)? = nil, onCompleted: ((Object) -> Swift.Void)? = nil, onDisposed: ((Object) -> Swift.Void)? = nil) -> RxSwift.Disposable where Object : AnyObject
   public func drive(onNext: ((Self.Element) -> Swift.Void)? = nil, onCompleted: (() -> Swift.Void)? = nil, onDisposed: (() -> Swift.Void)? = nil) -> RxSwift.Disposable
   public func drive() -> RxSwift.Disposable
 }
@@ -480,8 +481,8 @@ open class RxSearchBarDelegateProxy : RxCocoa.DelegateProxy<UIKit.UISearchBar, U
   }
   public init(searchBar: RxCocoa.RxSearchBarDelegateProxy.ParentObject)
   public static func registerKnownImplementations()
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UISearchBar, UIKit.UISearchBarDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UISearchBar, UIKit.UISearchBarDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UISearchBarDelegate, Proxy.ParentObject == UIKit.UISearchBar
+  @objc deinit
 }
 public protocol RxPickerViewDataSourceType {
   associatedtype Element
@@ -496,6 +497,7 @@ extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.Si
   public func emit(to relays: RxRelay.PublishRelay<Self.Element?>...) -> RxSwift.Disposable
   public func emit(to relays: RxRelay.ReplayRelay<Self.Element>...) -> RxSwift.Disposable
   public func emit(to relays: RxRelay.ReplayRelay<Self.Element?>...) -> RxSwift.Disposable
+  public func emit<Object>(with object: Object, onNext: ((Object, Self.Element) -> Swift.Void)? = nil, onCompleted: ((Object) -> Swift.Void)? = nil, onDisposed: ((Object) -> Swift.Void)? = nil) -> RxSwift.Disposable where Object : AnyObject
   public func emit(onNext: ((Self.Element) -> Swift.Void)? = nil, onCompleted: (() -> Swift.Void)? = nil, onDisposed: (() -> Swift.Void)? = nil) -> RxSwift.Disposable
   public func emit() -> RxSwift.Disposable
 }
@@ -508,8 +510,8 @@ open class RxPickerViewDelegateProxy : RxCocoa.DelegateProxy<UIKit.UIPickerView,
   }
   public init(pickerView: RxCocoa.RxPickerViewDelegateProxy.ParentObject)
   public static func registerKnownImplementations()
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UIPickerView, UIKit.UIPickerViewDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UIPickerView, UIKit.UIPickerViewDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UIPickerViewDelegate, Proxy.ParentObject == UIKit.UIPickerView
+  @objc deinit
 }
 public enum RxCocoaError : Swift.Error, Swift.CustomDebugStringConvertible {
   case unknown
@@ -684,6 +686,7 @@ extension ObservableType {
   public func bind<Observer>(to observers: Observer...) -> RxSwift.Disposable where Observer : RxSwift.ObserverType, Observer.Element == Self.Element?
   public func bind<Result>(to binder: (Self) -> Result) -> Result
   public func bind<R1, R2>(to binder: (Self) -> (R1) -> R2, curriedArgument: R1) -> R2
+  public func bind<Object>(with object: Object, onNext: @escaping (Object, Self.Element) -> Swift.Void) -> RxSwift.Disposable where Object : AnyObject
   public func bind(onNext: @escaping (Self.Element) -> Swift.Void) -> RxSwift.Disposable
 }
 extension Reactive where Base : UIKit.UISegmentedControl {
@@ -756,10 +759,10 @@ open class RxTabBarControllerDelegateProxy : RxCocoa.DelegateProxy<UIKit.UITabBa
   }
   public init(tabBar: RxCocoa.RxTabBarControllerDelegateProxy.ParentObject)
   public static func registerKnownImplementations()
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UITabBarController, UIKit.UITabBarControllerDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UITabBarController, UIKit.UITabBarControllerDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UITabBarControllerDelegate, Proxy.ParentObject == UIKit.UITabBarController
+  @objc deinit
 }
-@available(iOS 8.0, OSX 10.10, OSXApplicationExtension 10.10, *)
+@available(iOS 8.0, macOS 10.10, macOSApplicationExtension 10.10, *)
 open class RxWKNavigationDelegateProxy : RxCocoa.DelegateProxy<WebKit.WKWebView, WebKit.WKNavigationDelegate>, RxCocoa.DelegateProxyType, WebKit.WKNavigationDelegate {
   weak public var webView: WebKit.WKWebView? {
     get
@@ -768,8 +771,8 @@ open class RxWKNavigationDelegateProxy : RxCocoa.DelegateProxy<WebKit.WKWebView,
   public static func registerKnownImplementations()
   public static func currentDelegate(for object: WebKit.WKWebView) -> WebKit.WKNavigationDelegate?
   public static func setCurrentDelegate(_ delegate: WebKit.WKNavigationDelegate?, to object: WebKit.WKWebView)
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<WebKit.WKWebView, WebKit.WKNavigationDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<WebKit.WKWebView, WebKit.WKNavigationDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == WebKit.WKNavigationDelegate, Proxy.ParentObject == WebKit.WKWebView
+  @objc deinit
 }
 extension SharedSequenceConvertibleType {
   public func map<Result>(_ selector: @escaping (Self.Element) -> Result) -> RxCocoa.SharedSequence<Self.SharingStrategy, Result>
@@ -834,8 +837,14 @@ extension SharedSequence {
   public static func combineLatest<Collection, Result>(_ collection: Collection, resultSelector: @escaping ([Element]) throws -> Result) -> RxCocoa.SharedSequence<SharingStrategy, Result> where Collection : Swift.Collection, Collection.Element == RxCocoa.SharedSequence<SharingStrategy, Element>
   public static func combineLatest<Collection>(_ collection: Collection) -> RxCocoa.SharedSequence<SharingStrategy, [Element]> where Collection : Swift.Collection, Collection.Element == RxCocoa.SharedSequence<SharingStrategy, Element>
 }
-extension SharedSequenceConvertibleType {
+extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.SignalSharingStrategy {
   public func withUnretained<Object, Out>(_ obj: Object, resultSelector: @escaping (Object, Self.Element) -> Out) -> RxCocoa.SharedSequence<Self.SharingStrategy, Out> where Object : AnyObject
+  public func withUnretained<Object>(_ obj: Object) -> RxCocoa.SharedSequence<Self.SharingStrategy, (Object, Self.Element)> where Object : AnyObject
+}
+extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.DriverSharingStrategy {
+  @available(*, unavailable, message: "withUnretained has been deprecated for Driver. Consider using `drive(with:onNext:onCompleted:onDisposed:)`, instead")
+  public func withUnretained<Object, Out>(_ obj: Object, resultSelector: @escaping (Object, Self.Element) -> Out) -> RxCocoa.SharedSequence<Self.SharingStrategy, Out> where Object : AnyObject
+  @available(*, unavailable, message: "withUnretained has been deprecated for Driver. Consider using `drive(with:onNext:onCompleted:onDisposed:)`, instead")
   public func withUnretained<Object>(_ obj: Object) -> RxCocoa.SharedSequence<Self.SharingStrategy, (Object, Self.Element)> where Object : AnyObject
 }
 extension SharedSequenceConvertibleType {
@@ -915,8 +924,8 @@ open class RxNavigationControllerDelegateProxy : RxCocoa.DelegateProxy<UIKit.UIN
   }
   public init(navigationController: RxCocoa.RxNavigationControllerDelegateProxy.ParentObject)
   public static func registerKnownImplementations()
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UINavigationController, UIKit.UINavigationControllerDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UINavigationController, UIKit.UINavigationControllerDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UINavigationControllerDelegate, Proxy.ParentObject == UIKit.UINavigationController
+  @objc deinit
 }
 extension Reactive where Base : UIKit.UIBarButtonItem {
   public var tap: RxCocoa.ControlEvent<()> {
@@ -928,8 +937,8 @@ public struct KeyValueObservingOptions : Swift.OptionSet {
   public init(rawValue: Swift.UInt)
   public static let initial: RxCocoa.KeyValueObservingOptions
   public static let new: RxCocoa.KeyValueObservingOptions
-  public typealias Element = RxCocoa.KeyValueObservingOptions
   public typealias ArrayLiteralElement = RxCocoa.KeyValueObservingOptions
+  public typealias Element = RxCocoa.KeyValueObservingOptions
   public typealias RawValue = Swift.UInt
 }
 extension Reactive where Base : ObjectiveC.NSObject {
@@ -961,8 +970,8 @@ open class RxTableViewDataSourceProxy : RxCocoa.DelegateProxy<UIKit.UITableView,
   @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
   @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   override open func setForwardToDelegate(_ forwardToDelegate: UIKit.UITableViewDataSource?, retainDelegate: Swift.Bool)
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UITableView, UIKit.UITableViewDataSource>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UITableView, UIKit.UITableViewDataSource>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UITableViewDataSource, Proxy.ParentObject == UIKit.UITableView
+  @objc deinit
 }
 extension Reactive where Base : UIKit.UIGestureRecognizer {
   public var event: RxCocoa.ControlEvent<Base> {
@@ -993,7 +1002,7 @@ extension Reactive where Base : ObjectiveC.NSObject {
 extension Reactive where Base : ObjectiveC.NSObject {
   public func observeWeakly<Element>(_ type: Element.Type, _ keyPath: Swift.String, options: RxCocoa.KeyValueObservingOptions = [.new, .initial]) -> RxSwift.Observable<Element?>
 }
-extension Reactive {
+extension Reactive where Base : AnyObject {
   public var deallocated: RxSwift.Observable<Swift.Void> {
     get
   }
@@ -1048,8 +1057,8 @@ open class RxTabBarDelegateProxy : RxCocoa.DelegateProxy<UIKit.UITabBar, UIKit.U
   public static func registerKnownImplementations()
   open class func currentDelegate(for object: RxCocoa.RxTabBarDelegateProxy.ParentObject) -> UIKit.UITabBarDelegate?
   open class func setCurrentDelegate(_ delegate: UIKit.UITabBarDelegate?, to object: RxCocoa.RxTabBarDelegateProxy.ParentObject)
-  @objc deinit
   override public init<Proxy>(parentObject: RxCocoa.DelegateProxy<UIKit.UITabBar, UIKit.UITabBarDelegate>.ParentObject, delegateProxy: Proxy.Type) where Proxy : RxCocoa.DelegateProxy<UIKit.UITabBar, UIKit.UITabBarDelegate>, Proxy : RxCocoa.DelegateProxyType, Proxy.Delegate == UIKit.UITabBarDelegate, Proxy.ParentObject == UIKit.UITabBar
+  @objc deinit
 }
 extension Reactive where Base : UIKit.UISwitch {
   public var isOn: RxCocoa.ControlProperty<Swift.Bool> {
@@ -1166,7 +1175,7 @@ extension Reactive where Base : Foundation.NotificationCenter {
 public typealias ItemMovedEvent = (sourceIndex: Foundation.IndexPath, destinationIndex: Foundation.IndexPath)
 public typealias WillDisplayCellEvent = (cell: UIKit.UITableViewCell, indexPath: Foundation.IndexPath)
 public typealias DidEndDisplayingCellEvent = (cell: UIKit.UITableViewCell, indexPath: Foundation.IndexPath)
-@available(iOS 8.0, OSX 10.10, OSXApplicationExtension 10.10, *)
+@available(iOS 8.0, macOS 10.10, macOSApplicationExtension 10.10, *)
 extension Reactive where Base : WebKit.WKWebView {
   public var navigationDelegate: RxCocoa.DelegateProxy<WebKit.WKWebView, WebKit.WKNavigationDelegate> {
     get

@@ -3,20 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B414FA1926A4733D00300E7C /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B414FA1326A470BD00300E7C /* Stripe.framework */; };
+		B4385B8326A474E800F57B64 /* Stripe3DS2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D1751E26A4681100175805 /* Stripe3DS2.framework */; };
+		B4385B8426A474E800F57B64 /* Stripe3DS2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D1751E26A4681100175805 /* Stripe3DS2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4385B8526A474E800F57B64 /* StripeCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B414FA1426A470BD00300E7C /* StripeCore.framework */; };
+		B4385B8626A474E800F57B64 /* StripeCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B414FA1426A470BD00300E7C /* StripeCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B481FD292637086F00717137 /* FlowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481FD282637086F00717137 /* FlowContentView.swift */; };
 		B481FD2C263708CE00717137 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481FD2B263708CE00717137 /* Response.swift */; };
 		B4AE0EBA263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE0EB9263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift */; };
 		B4AE0EBC263700D500F9EFD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE0EBB263700D500F9EFD2 /* ContentView.swift */; };
 		B4AE0EBE263700D600F9EFD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AE0EBD263700D600F9EFD2 /* Assets.xcassets */; };
 		B4AE0EC1263700D600F9EFD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AE0EC0263700D600F9EFD2 /* Preview Assets.xcassets */; };
-		B4AE0ECC2637031200F9EFD2 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = B4AE0ECB2637031200F9EFD2 /* Stripe */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B4385B8726A474E900F57B64 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4385B8626A474E800F57B64 /* StripeCore.framework in Embed Frameworks */,
+				B4385B8426A474E800F57B64 /* Stripe3DS2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B414FA1326A470BD00300E7C /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = ../Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
+		B414FA1426A470BD00300E7C /* StripeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StripeCore.framework; path = ../Carthage/Build/iOS/StripeCore.framework; sourceTree = "<group>"; };
 		B481FD282637086F00717137 /* FlowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentView.swift; sourceTree = "<group>"; };
 		B481FD2B263708CE00717137 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		B481FD3826371B8E00717137 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -26,6 +47,7 @@
 		B4AE0EBD263700D600F9EFD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4AE0EC0263700D600F9EFD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4AE0EC2263700D600F9EFD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4D1751E26A4681100175805 /* Stripe3DS2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe3DS2.framework; path = ../Carthage/Build/iOS/Stripe3DS2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4AE0ECC2637031200F9EFD2 /* Stripe in Frameworks */,
+				B414FA1926A4733D00300E7C /* Stripe.framework in Frameworks */,
+				B4385B8526A474E800F57B64 /* StripeCore.framework in Frameworks */,
+				B4385B8326A474E800F57B64 /* Stripe3DS2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +70,7 @@
 				B481FD3826371B8E00717137 /* README.md */,
 				B4AE0EB8263700D500F9EFD2 /* SwiftUI+Combine+Stripe */,
 				B4AE0EB7263700D500F9EFD2 /* Products */,
+				B4D1751926A467F800175805 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +104,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B4D1751926A467F800175805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B414FA1326A470BD00300E7C /* Stripe.framework */,
+				B414FA1426A470BD00300E7C /* StripeCore.framework */,
+				B4D1751E26A4681100175805 /* Stripe3DS2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,6 +124,8 @@
 				B4AE0EB2263700D500F9EFD2 /* Sources */,
 				B4AE0EB3263700D500F9EFD2 /* Frameworks */,
 				B4AE0EB4263700D500F9EFD2 /* Resources */,
+				B4D1752226A4682800175805 /* Carthage */,
+				B4385B8726A474E900F57B64 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,7 +133,6 @@
 			);
 			name = "SwiftUI+Combine+Stripe";
 			packageProductDependencies = (
-				B4AE0ECB2637031200F9EFD2 /* Stripe */,
 			);
 			productName = "SwiftUI+Combine+Stripe";
 			productReference = B4AE0EB6263700D500F9EFD2 /* SwiftUI+Combine+Stripe.app */;
@@ -126,7 +162,6 @@
 			);
 			mainGroup = B4AE0EAD263700D500F9EFD2;
 			packageReferences = (
-				B4AE0ECA2637031200F9EFD2 /* XCRemoteSwiftPackageReference "stripe-ios" */,
 			);
 			productRefGroup = B4AE0EB7263700D500F9EFD2 /* Products */;
 			projectDirPath = "";
@@ -148,6 +183,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B4D1752226A4682800175805 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/Stripe.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/StripeCore.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Stripe3DS2.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4AE0EB2263700D500F9EFD2 /* Sources */ = {
@@ -288,6 +347,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI+Combine+Stripe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "SwiftUI+Combine+Stripe/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -298,6 +358,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -309,6 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI+Combine+Stripe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "SwiftUI+Combine+Stripe/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,6 +381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -344,25 +407,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B4AE0ECA2637031200F9EFD2 /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stripe/stripe-ios";
-			requirement = {
-				branch = "mc-beta-2";
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B4AE0ECB2637031200F9EFD2 /* Stripe */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4AE0ECA2637031200F9EFD2 /* XCRemoteSwiftPackageReference "stripe-ios" */;
-			productName = Stripe;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4AE0EAE263700D500F9EFD2 /* Project object */;
 }

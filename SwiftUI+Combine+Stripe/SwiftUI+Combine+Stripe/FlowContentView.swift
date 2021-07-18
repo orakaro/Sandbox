@@ -37,7 +37,7 @@ struct FlowContentView: View {
                         }
                     }
                 ).paymentConfirmationSheet(
-                    isConfirmingPayment: $isConfirmingPayment,
+                    isConfirming: $isConfirmingPayment,
                     paymentSheetFlowController: flowController,
                     onCompletion: model.onPaymentCompletetion
                 ).disabled(flowController.paymentOption == nil ||  isConfirmingPayment)
@@ -46,9 +46,9 @@ struct FlowContentView: View {
             }
             if let result = model.paymentResult {
                 switch result {
-                case .completed(let paymentIntent):
-                    Text("Complete: \(paymentIntent.stripeId)")
-                case .failed(let error, _):
+                case .completed:
+                    Text("Complete")
+                case .failed(let error):
                     Text("Failed: \(error.localizedDescription)")
                 case .canceled:
                     Text("Cancel")
@@ -67,7 +67,7 @@ struct FlowContentView_Previews: PreviewProvider {
 class FlowModel: ObservableObject {
     let backendCheckoutUrl = URL(string: "\(Constants.backendUrl)/checkout")!
     @Published var paymentSheetFlowController: PaymentSheet.FlowController?
-    @Published var paymentResult: PaymentResult?
+    @Published var paymentResult: PaymentSheetResult?
 
     init() {
         STPAPIClient.shared.publishableKey = Constants.publishableKey
@@ -113,7 +113,7 @@ class FlowModel: ObservableObject {
             .assign(to: &$paymentSheetFlowController)
     }
 
-    func onPaymentCompletetion(result: PaymentResult) {
+    func onPaymentCompletetion(result: PaymentSheetResult) {
         paymentResult = result
     }
 

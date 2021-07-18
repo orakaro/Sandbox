@@ -24,9 +24,9 @@ struct ContentView: View {
             }
             if let result = model.paymentResult {
                 switch result {
-                case .completed(let paymentIntent):
-                    Text("Complete: \(paymentIntent.stripeId)")
-                case .failed(let error, _):
+                case .completed:
+                    Text("Complete")
+                case .failed(let error):
                     Text("Failed: \(error.localizedDescription)")
                 case .canceled:
                     Text("Cancel")
@@ -45,7 +45,7 @@ struct ContentView_Previews: PreviewProvider {
 class Model: ObservableObject {
     let backendCheckoutUrl = URL(string: "\(Constants.backendUrl)/checkout")!
     @Published var paymentSheet: PaymentSheet?
-    @Published var paymentResult: PaymentResult?
+    @Published var paymentResult: PaymentSheetResult?
 
     init() {
         STPAPIClient.shared.publishableKey = Constants.publishableKey
@@ -81,7 +81,7 @@ class Model: ObservableObject {
             .assign(to: &$paymentSheet)
     }
 
-    func onPaymentCompletetion(result: PaymentResult) {
+    func onPaymentCompletetion(result: PaymentSheetResult) {
         paymentResult = result
     }
 }
