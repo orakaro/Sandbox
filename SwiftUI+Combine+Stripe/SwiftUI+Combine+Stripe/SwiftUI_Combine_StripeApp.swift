@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_Combine_StripeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CustomView()
         }
     }
 }

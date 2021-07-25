@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		B414FA1926A4733D00300E7C /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B414FA1326A470BD00300E7C /* Stripe.framework */; };
 		B4385B8326A474E800F57B64 /* Stripe3DS2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D1751E26A4681100175805 /* Stripe3DS2.framework */; };
-		B4385B8426A474E800F57B64 /* Stripe3DS2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D1751E26A4681100175805 /* Stripe3DS2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4385B8526A474E800F57B64 /* StripeCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B414FA1426A470BD00300E7C /* StripeCore.framework */; };
-		B4385B8626A474E800F57B64 /* StripeCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B414FA1426A470BD00300E7C /* StripeCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4385B8926A4762A00F57B64 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4385B8826A4762A00F57B64 /* CustomView.swift */; };
 		B481FD292637086F00717137 /* FlowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481FD282637086F00717137 /* FlowContentView.swift */; };
 		B481FD2C263708CE00717137 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481FD2B263708CE00717137 /* Response.swift */; };
 		B4AE0EBA263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE0EB9263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift */; };
@@ -20,24 +19,10 @@
 		B4AE0EC1263700D600F9EFD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AE0EC0263700D600F9EFD2 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B4385B8726A474E900F57B64 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B4385B8626A474E800F57B64 /* StripeCore.framework in Embed Frameworks */,
-				B4385B8426A474E800F57B64 /* Stripe3DS2.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		B414FA1326A470BD00300E7C /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = ../Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
 		B414FA1426A470BD00300E7C /* StripeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StripeCore.framework; path = ../Carthage/Build/iOS/StripeCore.framework; sourceTree = "<group>"; };
+		B4385B8826A4762A00F57B64 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B481FD282637086F00717137 /* FlowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentView.swift; sourceTree = "<group>"; };
 		B481FD2B263708CE00717137 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		B481FD3826371B8E00717137 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -88,6 +73,7 @@
 				B4AE0EB9263700D500F9EFD2 /* SwiftUI_Combine_StripeApp.swift */,
 				B4AE0EBB263700D500F9EFD2 /* ContentView.swift */,
 				B481FD282637086F00717137 /* FlowContentView.swift */,
+				B4385B8826A4762A00F57B64 /* CustomView.swift */,
 				B4AE0EBD263700D600F9EFD2 /* Assets.xcassets */,
 				B4AE0EC2263700D600F9EFD2 /* Info.plist */,
 				B4AE0EBF263700D600F9EFD2 /* Preview Content */,
@@ -125,7 +111,6 @@
 				B4AE0EB3263700D500F9EFD2 /* Frameworks */,
 				B4AE0EB4263700D500F9EFD2 /* Resources */,
 				B4D1752226A4682800175805 /* Carthage */,
-				B4385B8726A474E900F57B64 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4385B8926A4762A00F57B64 /* CustomView.swift in Sources */,
 				B481FD2C263708CE00717137 /* Response.swift in Sources */,
 				B481FD292637086F00717137 /* FlowContentView.swift in Sources */,
 				B4AE0EBC263700D500F9EFD2 /* ContentView.swift in Sources */,
